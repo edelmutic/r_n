@@ -6,7 +6,7 @@ interface CardProps {
 }
 
 const Card = ({ width, height }: CardProps) => {
-  return <div style={{ width, height, background: 'gray' }}></div>;
+  return <div style={{ width, height, border: '5px dashed gray' }}></div>;
 };
 
 export default Card;
