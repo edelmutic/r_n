@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <Card
-        onClick={() => console.log('click')}
+        onClick={(num) => console.log('click', num)}
         width="200px"
         height="200px"
         variant={CardVariant.outlined}
