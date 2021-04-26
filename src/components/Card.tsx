@@ -1,12 +1,29 @@
 import React from 'react';
 
+export enum CardVariant {
+  outlined = 'outlined',
+  primary = 'primary',
+}
+
 interface CardProps {
   width?: string;
   height?: string;
+  variant: CardVariant;
 }
 
-const Card = ({ width, height }: CardProps) => {
-  return <div style={{ width, height, border: '5px dashed gray' }}></div>;
+const Card: React.FC<CardProps> = ({ width, height, children, variant }) => {
+  return (
+    <div
+      style={{
+        width,
+        height,
+        border: variant === CardVariant.outlined ? '5px dashed gray' : 'none',
+        background: variant === CardVariant.primary ? 'lightgray' : '',
+      }}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default Card;
