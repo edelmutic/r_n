@@ -5,7 +5,12 @@ import Card, { CardVariant } from './components/Card';
 function App() {
   return (
     <div>
-      <Card width="200px" height="200px" variant={CardVariant.outlined}>
+      <Card
+        onClick={() => console.log('click')}
+        width="200px"
+        height="200px"
+        variant={CardVariant.outlined}
+      >
         <button>Send</button>
       </Card>
     </div>
