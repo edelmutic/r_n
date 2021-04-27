@@ -22,6 +22,16 @@ function App() {
       alert(error);
     }
   };
+  const fetchTodos = async () => {
+    try {
+      const response = await axios.get<ITodo[]>(
+        'https://jsonplaceholder.typicode.com/todos'
+      );
+      setUsers(response.data);
+    } catch (error) {
+      alert(error);
+    }
+  };
   return (
     <div>
       <Card
