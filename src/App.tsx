@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, NavLink, Route } from 'react-router-dom';
 import UsersPage from './components/UsersPage';
 import TodosPage from './components/TodosPage';
+import UserItemPage from './components/UserItemPage';
 
 const App = () => {
   return (
@@ -17,6 +18,9 @@ const App = () => {
         </Route>
         <Route path={'/todos'} exact>
           <TodosPage />
+        </Route>
+        <Route path={'/users/:id'}>
+          <UserItemPage />
         </Route>
       </div>
     </BrowserRouter>
