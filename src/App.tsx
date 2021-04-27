@@ -7,6 +7,14 @@ const App = () => {
   return (
     <BrowserRouter>
       <div>
+        <NavLink></NavLink>
+      </div>
+      <Route path={'/'}>
+        <a href="http://localhost:3000/users">users</a>
+        <br />
+        <a href="http://localhost:3000/todos">todos</a>
+      </Route>
+      <div>
         <Route path={'/users'} exact>
           <UsersPage />
         </Route>
