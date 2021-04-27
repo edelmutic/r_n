@@ -30,7 +30,8 @@ const UserItemPage: FC = () => {
   return (
     <div>
       <button onClick={() => history.push('/users')}>Back</button>
-      <h1>Страница пользователя {user?.name}</h1>
+      <h1>User page</h1>
+      <div style={{ fontSize: '20px', color: 'green' }}>{user?.name}</div>
       <div>{user?.email}</div>
       <div>
         {user?.address.city} {user?.address.street} {user?.address.zipcode}
