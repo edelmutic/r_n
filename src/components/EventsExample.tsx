@@ -1,15 +1,14 @@
-import React, { FC, useState } from 'react';
-
-// interface EventsExampleProps {}
+import React, { FC, useRef, useState } from 'react';
 
 const EventsExample: FC = () => {
   const [value, setValue] = useState<string>('');
   const [isDrag, setIsDrag] = useState<boolean>(false);
+
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
-  const clickHandler = (e: React.MouseEvent) => {
+  const clickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     console.log(value);
   };
 
@@ -32,27 +31,27 @@ const EventsExample: FC = () => {
     setIsDrag(false);
     console.log('DROP');
   };
+
   return (
     <div>
-      <input type="text" value={value} onChange={changeHandler} />
+      <input value={value} onChange={changeHandler} type="text" />
       <button onClick={clickHandler}>Button</button>
       <div
         onDrag={dragHandler}
         draggable
         style={{ width: 200, height: 200, background: 'red' }}
       ></div>
-      <div>
+      <div
         onDrop={dropHandler}
         onDragLeave={leaveHandler}
         onDragOver={dragWithPreventHandler}
-        style=
-        {{
+        style={{
           width: 200,
           height: 200,
           background: isDrag ? 'blue' : 'red',
           marginTop: 15,
         }}
-      </div>
+      ></div>
     </div>
   );
 };

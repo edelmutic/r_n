@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Card, { CardVariant } from './components/Card';
-import UserList from './components/UserList';
+
 import { IUser } from './types/types';
 import { ITodo } from './types/types';
 import axios from 'axios';
