@@ -3,6 +3,7 @@ import React, { FC, useRef, useState } from 'react';
 const EventsExample: FC = () => {
   const [value, setValue] = useState<string>('');
   const [isDrag, setIsDrag] = useState<boolean>(false);
+  const ref = useRef<HTMLInputElement>(null);
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
@@ -34,7 +35,18 @@ const EventsExample: FC = () => {
 
   return (
     <div>
-      <input value={value} onChange={changeHandler} type="text" />
+      <input
+        value={value}
+        onChange={changeHandler}
+        type="text"
+        placeholder="Controlled"
+      />
+      <input
+        value={value}
+        onChange={changeHandler}
+        type="text"
+        placeholder="Uncontrolled"
+      />
       <button onClick={clickHandler}>Button</button>
       <div
         onDrag={dragHandler}
