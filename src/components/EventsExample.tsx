@@ -10,7 +10,7 @@ const EventsExample: FC = () => {
   };
 
   const clickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log(value);
+    console.log(ref.current?.value);
   };
 
   const dragHandler = (e: React.DragEvent<HTMLDivElement>) => {
@@ -41,12 +41,7 @@ const EventsExample: FC = () => {
         type="text"
         placeholder="Controlled"
       />
-      <input
-        value={value}
-        onChange={changeHandler}
-        type="text"
-        placeholder="Uncontrolled"
-      />
+      <input ref={ref} type="text" placeholder="Uncontrolled" />
       <button onClick={clickHandler}>Button</button>
       <div
         onDrag={dragHandler}
