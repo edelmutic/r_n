@@ -7,6 +7,7 @@ import { ITodo } from './types/types';
 import axios from 'axios';
 import List from './components/List';
 import UserItem from './components/UserItem';
+import TodoItem from './components/TodoItem';
 
 function App() {
   const [users, setUsers] = useState<IUser[]>([]);
@@ -48,6 +49,10 @@ function App() {
       <List
         items={users}
         renderItem={(user: IUser) => <UserItem user={user} key={user.id} />}
+      />
+      <List
+        items={todos}
+        renderItem={(todo: ITodo) => <TodoItem todo={todo} key={todo.id} />}
       />
     </div>
   );
