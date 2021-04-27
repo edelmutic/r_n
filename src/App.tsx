@@ -37,27 +37,7 @@ function App() {
       alert(error);
     }
   };
-  return (
-    <div>
-      <EventsExample />
-      <Card
-        onClick={(num) => console.log('click', num)}
-        width="200px"
-        height="200px"
-        variant={CardVariant.outlined}
-      >
-        <button>Send</button>
-      </Card>
-      <List
-        items={users}
-        renderItem={(user: IUser) => <UserItem user={user} key={user.id} />}
-      />
-      <List
-        items={todos}
-        renderItem={(todo: ITodo) => <TodoItem todo={todo} key={todo.id} />}
-      />
-    </div>
-  );
+  return <BrowserRouter></BrowserRouter>;
 }
 
 export default App;
