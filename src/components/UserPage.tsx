@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import axios from 'axios';
 import { IUser } from '../types/types';
 import List from './List';
 import UserItem from './UserItem';
 
-const UserPage = () => {
+const UserPage: FC = () => {
   const [users, setUsers] = useState<IUser[]>([]);
 
   useEffect(() => {
